@@ -15,7 +15,10 @@ export const matchUrlPath = (url: string, pathName: string) => {
   return matcher(pathName);
 };
 
-export const findRoute = (pathName: string, appRoutes: AppRoutes[]) => {
+export const findRoute = (pathName: string | null, appRoutes: AppRoutes[]) => {
+  if (!pathName) {
+    return null;
+  }
   for (const route of appRoutes) {
     if (matchUrlPath(route.href, pathName)) {
       return route;

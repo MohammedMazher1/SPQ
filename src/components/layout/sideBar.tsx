@@ -45,8 +45,8 @@ export default function Sidebar() {
           <Image
             src="/image/logo.png"
             alt="Tesla Logo"
-            width={200}
-            height={200}
+            width={220}
+            height={220}
           />
         </Link>
       </div>
@@ -57,7 +57,7 @@ export default function Sidebar() {
             {navRoutes.slice(0, 6).map((route, index) => {
               const isActive =
                 pathname === route.href ||
-                pathname.startsWith(`/${route.href}/`);
+                pathname?.startsWith(`/${route.href}/`);
               return (
                 <li key={index}>
                   <Link
@@ -87,7 +87,7 @@ export default function Sidebar() {
             {navRoutes.slice(6, 8).map((route, index) => {
               const isActive =
                 pathname === route.href ||
-                pathname.startsWith(`/${route.href}/`);
+                pathname?.startsWith(`/${route.href}/`);
               return (
                 <li key={index}>
                   <Link

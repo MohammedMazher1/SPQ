@@ -4,7 +4,14 @@ const nextConfig: NextConfig = {
   /* config options here */
   // add image domains
   images: {
-    domains: ['nafas.s3.ap-south-1.amazonaws.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'nafas.s3.ap-south-1.amazonaws.com',
+        port: '',
+        pathname: '/**',
+      },
+    ],
   },
 };
 

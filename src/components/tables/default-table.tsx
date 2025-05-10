@@ -45,7 +45,7 @@ export default function DefaultTable<TData, TValue>({
     getCoreRowModel: getCoreRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
   });
-  const currentPage = useSearchParams().get('page');
+  const currentPage = useSearchParams()?.get('page');
   const onRowClickHandler = React.useCallback(
     (
       event: React.MouseEvent<HTMLTableRowElement, MouseEvent>,

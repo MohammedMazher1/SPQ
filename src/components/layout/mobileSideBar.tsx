@@ -47,53 +47,50 @@ const MobileSideBar = () => {
       <SheetTrigger className="block sm:hidden">
         <AlignLeft />
       </SheetTrigger>
-      <SheetTitle className="hidden">نفس للتسويق</SheetTitle>
+      <SheetTitle className="hidden">Tesla</SheetTitle>
       <SheetContent className="p-0">
         <aside className={cn('mt-10 flex h-[94%] flex-col bg-white')}>
-          <div>
+          <div className="flex h-20 items-center justify-center">
             <Link href="/" className={cn('ms-2 flex items-center space-x-2')}>
               <Image
                 src="/image/logo.png"
-                alt="nfas-web"
-                width={48}
-                height={48}
+                alt="Tesla Logo"
+                width={180}
+                height={180}
               />
-              <span className="text-lg font-semibold">نفس لتسويق اعمال</span>
             </Link>
           </div>
-          {user && (
-            <nav className="flex-1 overflow-y-auto py-4">
-              <ul className="space-y-2 px-4">
-                {navRoutes.map((route, index) => {
-                  const isActive =
-                    pathname === route.href ||
-                    pathname.startsWith(`/dashboard/${route.href}/`);
-                  return (
-                    <li key={index}>
-                      <Link
-                        href={route.href}
-                        className={cn(
-                          'flex items-center rounded-lg p-2 text-base font-semibold text-[#344054] hover:bg-gray-100',
-                          {
-                            'bg-gray-100': isActive,
-                          },
-                          // if user is store make it display none
-                          {
-                            hidden: user?.role !== 1 && route.disable,
-                          },
-                        )}
-                      >
-                        {icons[route.icon as keyof typeof icons]}
-                        <span className="ms-2">{route.label}</span>
-                      </Link>
-                    </li>
-                  );
-                })}
-              </ul>
-            </nav>
-          )}
+          <nav className="flex-1 overflow-y-auto py-4">
+            <ul className="space-y-2 px-4">
+              {navRoutes.map((route, index) => {
+                const isActive =
+                  pathname === route.href ||
+                  pathname?.startsWith(`/dashboard/${route.href}/`);
+                return (
+                  <li key={index}>
+                    <Link
+                      href={route.href}
+                      className={cn(
+                        'flex items-center rounded-lg p-2 text-base font-semibold text-[#344054] hover:bg-gray-100',
+                        {
+                          'bg-gray-100': isActive,
+                        },
+                        // if user is store make it display none
+                        {
+                          hidden: user?.role !== 1 && route.disable,
+                        },
+                      )}
+                    >
+                      {icons[route.icon as keyof typeof icons]}
+                      <span className="ms-2">{route.label}</span>
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
           <Button
-            className="cursor-pointer gap-x-1 text-red-600 hover:!text-red-600"
+            className="cursor-pointer gap-x-1 text-secondary hover:!text-secondary"
             onClick={() => handleLogOut()}
             dir="rtl"
           >

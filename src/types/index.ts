@@ -242,9 +242,6 @@ export type Product = {
   description: string;
   categoryId: string;
   quantityAvailable: number;
-  store: Family;
-  category: Category;
-  currency: Currency;
 };
 
 // Define the OrderItem type
@@ -267,7 +264,7 @@ export type Order = {
   status: string;
   orderDate: string;
   paymentProof: string;
-  discrption: string;
+  description: string;
   paymentDate: string;
   userId: number;
   isDeleted: boolean;

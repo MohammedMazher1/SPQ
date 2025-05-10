@@ -31,9 +31,13 @@ export default function Navbar() {
     <nav className="flex h-20 items-center justify-between space-y-2 border-b bg-white p-4">
       <div className="flex w-full items-center justify-between px-4 sm:hidden">
         <div className="flex items-center justify-between gap-2">
-          <Image src="/image/logo.png" alt="nfasLogo" width={40} height={40} />
-          <h1 className="hidden sm:block">نفس لتسويق أعمال </h1>
-          <h1 className="hidden font-medium sm:block">الأسر المنتجة</h1>
+          <Image
+            src="/image/logo.png"
+            alt="nfasLogo"
+            width={120}
+            height={120}
+          />
+          <h1 className="hidden sm:block">تسلا الخليج للتجارة </h1>
         </div>
         <MobileSideBar />
       </div>

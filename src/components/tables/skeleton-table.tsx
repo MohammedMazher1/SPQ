@@ -19,7 +19,7 @@ interface SkeletonTableProps<T> {
 
 // Update the function to destructure columns from props
 export default function SkeletonTable<T>({ columns }: SkeletonTableProps<T>) {
-  const currentPage = useSearchParams().get('page');
+  const currentPage = useSearchParams()?.get('page');
 
   return (
     <div className="w-full">
